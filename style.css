@@ -5,3 +5,13 @@ h2 {color:gainsboro}
 p {background-color:#000000; color:gainsboro}
 aside {background-color:#000000; color:gainsboro}
 footer {position:fixed; bottom:10px; left:0}
+.btn-group button {
+  background-color: #111; /* Black background */
+  border: none; /* No border */
+  color: white; /* White text */
+  padding: 10px 25px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 35%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+  margin: auto;
+}
