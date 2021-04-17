@@ -13,7 +13,7 @@ function speakMicrowave(){
 	speechSynthesis.speak(message);
 }
 
-function speakSbinnala(){}
-    let message = new SpeechSynthesisUtterance("Pronto? User? Sbinnala.");
+function speakSbinnala(){
+    let message = new SpeechSynthesisUtterance("Pronto? User? Sbin nala.");
     speechSynthesis.speak(message);
 }
