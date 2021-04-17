@@ -12,9 +12,14 @@ img {
 .game-window{
     background-color:#000;
     width:45%;
-    height:4px%;
     border:5px solid white;
     margin:auto;
+}
+.game-window p{
+width:500px;
+position:relative;
+margin:auto;
+text-align:center;
 }
 .button-stack button {
     background-color: #000; /* Black background */
@@ -27,4 +32,16 @@ img {
     margin: auto;
     position: relative;
     top: 75%;
+}
+.status-window{
+    background-color:#000;
+    width:45%;
+    border:5px solid white;
+    margin:auto;
+}
+.status-window p{
+width:75px;
+position:relative;
+margin:auto;
+text-align:center;
 }
