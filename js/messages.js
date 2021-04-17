@@ -12,3 +12,8 @@ function speakMicrowave(){
 	let message = new SpeechSynthesisUtterance("beep! beep!  beep! unnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
 	speechSynthesis.speak(message);
 }
+
+function speakSbinnala(){}
+    let message = new SpeechSynthesisUtterance("Pronto? User? Sbinnala.");
+    speechSynthesis.speak(message);
+}
