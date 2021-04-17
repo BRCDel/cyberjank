@@ -12,11 +12,11 @@ img {
 .game-window{
     background-color:#000;
     width:45%;
-    border:5px solid white;
+    border:1px solid white;
     margin:auto;
 }
 .game-window p{
-width:45vw;
+width:35%;
 position:relative;
 margin:auto;
 text-align:center;
@@ -24,9 +24,9 @@ text-align:center;
 .button-stack button {
     background-color: #000; /* Black background */
     border: none; /* No border */
-    color: white; /* White text */
+    color: gainsboro; /* Gray text */
     cursor: pointer; /* Pointer/hand icon */
-    width: 45%; /* Set the width to 35% of the window */
+    width: 45%; /* Set the width to 45% of the window */
     height: 45px;
     display: block; /* Make the buttons appear below each other */
     margin: auto;
@@ -36,11 +36,11 @@ text-align:center;
 .status-window{
     background-color:#000;
     width:45%;
-    border:5px solid white;
+    border:1px solid white;
     margin:auto;
 }
 .status-window p{
-width:75px;
+width:35%;
 position:relative;
 margin:auto;
 text-align:center;
