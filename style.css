@@ -16,6 +16,7 @@ img {
     margin:auto;
 }
 .game-window p{
+width:45vw;
 position:relative;
 margin:auto;
 text-align:center;
