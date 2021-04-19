@@ -29,7 +29,6 @@ function Path3(){
     document.getElementById("button2").setAttribute("onClick", "Choice2();")
     document.getElementById("button3").setAttribute("onClick", "Choice3();")
     document.getElementById("status-paragraph").innerHTML = ('HP: ' + hp + '/' + maxhp + '<br/>ATK: ' + atk + '<br/>DEF: ' + def);
-
 }
 function Choice1(){
     alert('Choice 1 performed')
