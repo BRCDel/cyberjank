@@ -1,4 +1,4 @@
-let hp = 45;
+let hp = 50;
 let maxhp = 50;
 let atk = 10;
 let def = 10;
