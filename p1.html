@@ -4,23 +4,24 @@
 		<meta charset="UTF-8" />
 		<title>Cyberjank 2067</title>
 		<link  rel="stylesheet" href="style.css" type="text/css"/>
+		<script src="js/game.js"></script>
 	</head>
 	<body>
 		<nav>
 			<a target="_self" href="index.html">Back to Home Page</a>
 		</nav>
 		<section>
-			<div class="game-window">
+			<div class="game-window" id="game-window">
 				<img src="media/city.jpg"/>
 				<p>Welcome to Light City. Which walk of life are you from?</p>
 			</div>
-			<div class="button-stack">
-				<button>Wanderer</button>
-				<button>Street Rat</button>
-				<button>Corporate</button>
+			<div class="button-stack" id="button-stack">
+				<button id="button1" onClick="Path1();">Wanderer</button>
+				<button id="button2" onClick="Path2();">Street Rat</button>
+				<button id="button3" onClick="Path3();">Corporate</button>
 			</div>
-			<div class="status-window">
-				<p>HP: 50/50<br/>ATK: 5<br/>DEF: 5</p>
+			<div class="status-window" id="status-window">
+				<p id="status-paragraph">HP: 50/50<br/>ATK: 5<br/>DEF: 5</p>
 			</div>
 		</section>
 		<footer> &copy; 2021 - Worse Made Fakes - All fights deserved </footer>
