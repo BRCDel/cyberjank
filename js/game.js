@@ -80,9 +80,13 @@ function Path2(){
 function Path3(){
     lifepath = document.getElementById("button3").innerHTML;;
     document.getElementById("game-text").innerHTML = "The meeting is going horribly, dearest Corpo. How about getting out of here? [WIP]";
+    document.getElementById("image").setAttribute("src", "media/img/meeting.jpg");
     document.getElementById("button1").setAttribute("onClick", "Corpo_a1();");
+    document.getElementById("button1").innerHTML = "cr_a1";
     document.getElementById("button2").setAttribute("onClick", "Corpo_a2();");
+    document.getElementById("button2").innerHTML = "cr_a2";
     document.getElementById("button3").setAttribute("onClick", "Corpo_a3();");
+    document.getElementById("button3").innerHTML = "cr_a3";
     UpdateStatus('Path3');
 }
 function Wanderer_a1(){
