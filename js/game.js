@@ -8,8 +8,8 @@ function LoadData(){
         def = localStorage.getItem('def');
         lifepath = localStorage.getItem('lifepath');
         last_func = localStorage.getItem('lastAction');
-        if(last_func != null){
-            window[last_func];
+        if(last_func != 'none'){
+            window[last_func]();
         }
     }else{
         hp = 50;
@@ -35,6 +35,7 @@ function SaveData(){
 function ClearData(){
     if(confirm("Delete ALL save data? This CANNOT be undone, EVER.")){
         localStorage.clear();
+        last_func='none';
         alert("All save data deleted. Reloading page.");
         window.location.reload();
     }else{
@@ -55,7 +56,7 @@ function Path1(){
     document.getElementById("button2").innerHTML = "Neon District";
     document.getElementById("button3").setAttribute("onClick", "Wanderer_a3();");
     document.getElementById("button3").innerHTML = "City's Edge"
-    UpdateStatus('Path1();');
+    UpdateStatus('Path1');
 }
 
 function Path2(){
@@ -68,7 +69,7 @@ function Path2(){
     document.getElementById("button1").innerHTML = "sr_a2";
     document.getElementById("button3").setAttribute("onClick", "StreetRat_a3();");
     document.getElementById("button1").innerHTML = "sr_a3";
-    UpdateStatus('Path2();');
+    UpdateStatus('Path2');
 }
 
 function Path3(){
@@ -77,7 +78,7 @@ function Path3(){
     document.getElementById("button1").setAttribute("onClick", "Corpo_a1();");
     document.getElementById("button2").setAttribute("onClick", "Corpo_a2();");
     document.getElementById("button3").setAttribute("onClick", "Corpo_a3();");
-    UpdateStatus('Path3();');
+    UpdateStatus('Path3');
 }
 function Wanderer_a1(){
     document.getElementById("game-text").innerHTML = "Welcome to Downtown Alicante.";
@@ -88,7 +89,7 @@ function Wanderer_a1(){
     document.getElementById("button2").innerHTML = "Turn into the nearest alley";
     document.getElementById("button3").setAttribute("onClick", "Wanderer_a1_c();");
     document.getElementById("button3").innerHTML = "Head to the Neon District";
-    UpdateStatus('Wanderer_a1();');
+    UpdateStatus('Wanderer_a1');
 }
 function Wanderer_a2(){
     document.getElementById("game-text").innerHTML = ""
@@ -100,7 +101,7 @@ function Wanderer_a2(){
     document.getElementById("button3").setAttribute("onClick", "Wanderer_a2_c();");
     document.getElementById("button3").innerHTML = "a2_c";
     alert("Not implemented yet, check back soon!");
-    UpdateStatus('Wanderer_a2();');
+    UpdateStatus('Wanderer_a2');
 }
 function Wanderer_a3(){
     document.getElementById("game-text").innerHTML = ""
@@ -112,7 +113,7 @@ function Wanderer_a3(){
     document.getElementById("button3").setAttribute("onClick", "Wanderer_a3_c();");
     document.getElementById("button3").innerHTML = "a3_c";
     alert("Not implemented yet, check back soon!");
-    UpdateStatus('Wanderer_a3();');
+    UpdateStatus('Wanderer_a3');
 }
 
 function Shop(last_func){
@@ -124,7 +125,7 @@ function Shop(last_func){
     document.getElementById("button2").innerHTML = "Go back outside";
     document.getElementById("button3").setAttribute("onClick", last_func+"();");
     document.getElementById("button3").innerHTML = "";
-    UpdateStatus('Shop();');
+    UpdateStatus('Shop');
 }
 
 function no_action(last_func){

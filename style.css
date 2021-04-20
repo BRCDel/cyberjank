@@ -62,5 +62,6 @@ text-align:center;
     color: gainsboro;
     cursor: pointer;
     height: 45px;
-    margin: auto; /* I heard about this on StackOverflow. It is beautiful. */
+    width: 33%;
+    margin: auto;
 }
