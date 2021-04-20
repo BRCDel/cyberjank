@@ -1,3 +1,4 @@
+/* Base styling for most HTML components */
 nav {background-color:#000; color:gainsboro}
 body {background-color:#000; color:gainsboro}
 h1 {color:gainsboro}
@@ -5,10 +6,12 @@ h2 {color:gainsboro}
 p {background-color:#000; color:gainsboro}
 aside {background-color:#000; color:gainsboro}
 footer {position:fixed; bottom:10px; left:0}
+/* Image fitment fix found in StackOverflow */
 img {
     max-width: 100%;
     max-height: 100%;
 }
+/* Literally just a basic container */
 .game-window{
     background-color:#000;
     width:45%;
@@ -21,18 +24,20 @@ position:relative;
 margin:auto;
 text-align:center;
 }
+/* The template for this block came from good ol' W3Schools: https://www.w3schools.com/js/DEFAULT.asp */
 .button-stack button {
-    background-color: #000; /* Black background */
-    border: none; /* No border */
-    color: gainsboro; /* Gray text */
-    cursor: pointer; /* Pointer/hand icon */
-    width: 45%; /* Set the width to 45% of the window */
+    background-color: #000;
+    border: none;
+    color: gainsboro;
+    cursor: pointer;
+    width: 45%;
     height: 45px;
     display: block; /* Make the buttons appear below each other */
-    margin: auto;
+    margin: auto; /* I heard about this on StackOverflow. It is beautiful. */
     position: relative;
     top: 75%;
 }
+/* Another basic container */
 .status-window{
     background-color:#000;
     width:45%;
