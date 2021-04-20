@@ -4,6 +4,7 @@ let atk = 10;
 let def = 10;
 let lifepath = 'none';
 let last_func = 'none';
+let music = false;
 
 var audio = new Audio('media/aud/theme_stage1.mp3');
 audio.volume = 0.15;
@@ -61,7 +62,9 @@ function Path1(){
     document.getElementById("button3").setAttribute("onClick", "Wanderer_a3();");
     document.getElementById("button3").innerHTML = "City's Edge"
     UpdateStatus('Path1');
-    ChangeTrack("theme_stage_2");
+    if(music){
+        ChangeTrack("theme_stage_2");
+    }
 }
 
 function Path2(){
@@ -102,7 +105,7 @@ function Wanderer_a1(){
 }
 function Wanderer_a2(){
     document.getElementById("game-text").innerHTML = ""
-    document.getElementById("image").setAttribute("src", "media/img/low_view.jpg");
+    document.getElementById("image").setAttribute("src", "media/img/low_vdiew.jpg");
     document.getElementById("button1").setAttribute("onClick", "Wanderer_a2_a();");
     document.getElementById("button1").innerHTML = "a2_a";
     document.getElementById("button2").setAttribute("onClick", "Wanderer_a2_b();");
@@ -139,12 +142,14 @@ function Shop(last_func){
 
 
 function EnableMusic(){
+    music = true;
     audio.play();
     document.getElementById("music").setAttribute("onClick", "DisableMusic();");
     document.getElementById("music").innerHTML = "Disable Music";
 }
 
 function DisableMusic(){
+    music = false;
     audio.pause();
     audio.currentTime=0;
     document.getElementById("music").setAttribute("onClick", "EnableMusic();");
