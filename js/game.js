@@ -11,7 +11,7 @@ audio.volume = 0.15;
 audio.loop = true;
 
 function LoadData(){
-    if(localStorage.getItem('lifepath') == 'true'){
+    if(localStorage.getItem('lifepath') != 'none'){
         hp = localStorage.getItem('hp');
         maxhp = localStorage.getItem('maxhp');
         atk = localStorage.getItem('atk');
@@ -62,8 +62,9 @@ function Path1(){
     document.getElementById("button3").setAttribute("onClick", "Wanderer_a3();");
     document.getElementById("button3").innerHTML = "City's Edge"
     UpdateStatus('Path1');
+    ChangeTrack("theme_stage_2");
     if(music){
-        ChangeTrack("theme_stage_2");
+        EnableMusic();
     }
 }
 
@@ -159,7 +160,6 @@ function DisableMusic(){
 function ChangeTrack(track){
     DisableMusic();
     audio.src=("media/aud/" + track + ".mp3");
-    EnableMusic();
 }
 function no_action(last_func){
     UpdateStatus(last_func);
