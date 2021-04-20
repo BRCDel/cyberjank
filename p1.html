@@ -6,14 +6,14 @@
 		<link  rel="stylesheet" href="style.css" type="text/css"/>
 		<script src="js/game.js"></script>
 	</head>
-	<body>
+	<body onload="LoadData();" onbeforeunload="SaveData();">
 		<nav>
 			<a target="_self" href="index.html">Back to Home Page</a>
 		</nav>
 		<section>
 			<div class="game-window" id="game-window">
-				<img id="image" src="media/img/city.jpg"/>
-				<p id="game-text">Welcome to Light City. Which walk of life are you from?</p>
+				<img id="image" src="media/img/cityscape.png"/>
+				<p id="game-text">Welcome to Alicante. Which walk of life are you from?</p>
 			</div>
 			<div class="button-stack" id="button-stack">
 				<button id="button1" onClick="Path1();">Wanderer</button>
@@ -23,7 +23,10 @@
 			<div class="status-window" id="status-window">
 				<p id="status-paragraph">HP: 50/50<br/>ATK: 10<br/>DEF: 10</p>
 			</div>
+			<div class="settings-panel" id="settings-panel">
+				<button id="clear-data" onClick="ClearData();">Clear Save Data</button>
+			</div>
 		</section>
-		<footer> &copy; 2021 - Worse Made Fakes - All fights deserved </footer>
+		<footer> 2021 - Worse Made Fakes - All fights deserved </footer>
 	</body>
 </html>

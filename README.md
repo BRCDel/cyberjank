@@ -12,4 +12,6 @@ No intellectual property infringement is intended, and any instances of it that 
 
 I am not in any way affiliated with, endorsed or sponsored by or have any other relationship with Electronet Pitsoulakis Rompogiannakis. It'll make sense if you find it.
 
-Image credit goes to Agnis Leznins, Alexander Popov, Atul Vinayak, Cheng Feng, Christopher Farrugia, Judeus Samson, Pat Krupa, Sean Foley and Sunyu Kim on Unsplash.
+Image credit goes to: 
+Agnis Leznins, Alexander Popov, Atul Vinayak, Cheng Feng, Christopher Farrugia, Judeus Samson, Pat Krupa, Sean Foley and Sunyu Kim on Unsplash.
+Roberts Space Industries

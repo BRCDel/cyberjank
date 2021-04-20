@@ -50,3 +50,17 @@ position:relative;
 margin:auto;
 text-align:center;
 }
+.settings-panel{
+    background-color:#000;
+    width:45%;
+    border:1px solid white;
+    margin:auto;
+}
+.settings-panel button{
+    background-color: #000;
+    border: none;
+    color: gainsboro;
+    cursor: pointer;
+    height: 45px;
+    margin: auto; /* I heard about this on StackOverflow. It is beautiful. */
+}
