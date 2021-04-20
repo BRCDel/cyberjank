@@ -1,7 +1,16 @@
-var hp, maxhp, atk, def, lifepath, last_func;
+let hp = 50;
+let maxhp = 50;
+let atk = 10;
+let def = 10;
+let lifepath = 'none';
+let last_func = 'none';
+
+var audio = new Audio('media/aud/theme_stage1.mp3');
+audio.volume = 0.15;
+audio.loop = true;
 
 function LoadData(){
-    if(localStorage.getItem('saved') == 'true'){
+    if(localStorage.getItem('lifepath') == 'true'){
         hp = localStorage.getItem('hp');
         maxhp = localStorage.getItem('maxhp');
         atk = localStorage.getItem('atk');
@@ -11,17 +20,12 @@ function LoadData(){
         if(last_func != 'none'){
             window[last_func]();
         }
-    }else{
-        hp = 50;
-        maxhp = 50;
-        atk = 10;
-        def = 10;
-        lifepath = 'none';
-        last_func = 'none';
+        alert("Data loaded.");
     }
 }
 
 function SaveData(){
+    localStorage.setItem('track', audio.src);
     localStorage.setItem('hp', hp);
     localStorage.setItem('maxhp', maxhp);
     localStorage.setItem('atk', atk);
@@ -57,6 +61,7 @@ function Path1(){
     document.getElementById("button3").setAttribute("onClick", "Wanderer_a3();");
     document.getElementById("button3").innerHTML = "City's Edge"
     UpdateStatus('Path1');
+    ChangeTrack("theme_stage_2");
 }
 
 function Path2(){
@@ -128,6 +133,25 @@ function Shop(last_func){
     UpdateStatus('Shop');
 }
 
+
+function EnableMusic(){
+    audio.play();
+    document.getElementById("music").setAttribute("onClick", "DisableMusic();");
+    document.getElementById("music").innerHTML = "Disable Music";
+}
+
+function DisableMusic(){
+    audio.pause();
+    audio.currentTime=0;
+    document.getElementById("music").setAttribute("onClick", "EnableMusic();");
+    document.getElementById("music").innerHTML = "Enable Music";
+}
+
+function ChangeTrack(track){
+    DisableMusic();
+    audio.src=("media/aud/" + track + ".mp3");
+    EnableMusic();
+}
 function no_action(last_func){
     UpdateStatus(last_func);
 }
