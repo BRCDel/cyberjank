@@ -11,3 +11,5 @@ This is merely a parody made for fun. Its point is to entertain and nothing else
 No intellectual property infringement is intended, and any instances of it that do appear will be removed at first notice. Please direct any such reports to 40444648@live.napier.ac.uk.
 
 I am not in any way affiliated with, endorsed or sponsored by or have any other relationship with Electronet Pitsoulakis Rompogiannakis. It'll make sense if you find it.
+
+Image credit goes to Agnis Leznins, Alexander Popov, Atul Vinayak, Cheng Feng, Christopher Farrugia, Judeus Samson, Pat Krupa, Sean Foley and Sunyu Kim on Unsplash.
