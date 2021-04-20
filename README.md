@@ -22,6 +22,8 @@ I am not in any way affiliated with, endorsed or sponsored by or have any other 
 Image credit goes to: 
 
 Stocksy on Pinterest for the meeting image.
+
 Roberts Space Industries for the Cityscape image.
+
 Agnis Leznins, Alexander Popov, Atul Vinayak, Cheng Feng, Christopher Farrugia, Judeus Samson, Pat Krupa, Sean Foley and Sunyu Kim on Unsplash for all other images.
 
