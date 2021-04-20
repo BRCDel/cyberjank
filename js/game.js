@@ -71,9 +71,9 @@ function Path2(){
     document.getElementById("button1").setAttribute("onClick", "StreetRat_a1();");
     document.getElementById("button1").innerHTML = "sr_a1";
     document.getElementById("button2").setAttribute("onClick", "StreetRat_a2();");
-    document.getElementById("button1").innerHTML = "sr_a2";
+    document.getElementById("button2").innerHTML = "sr_a2";
     document.getElementById("button3").setAttribute("onClick", "StreetRat_a3();");
-    document.getElementById("button1").innerHTML = "sr_a3";
+    document.getElementById("button3").innerHTML = "sr_a3";
     UpdateStatus('Path2');
 }
 
