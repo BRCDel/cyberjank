@@ -4,7 +4,6 @@ let atk = 10;
 let def = 10;
 let lifepath = 'none';
 let last_func = 'none';
-let saved = false;
 let music = false;
 let escaped = false;
 
@@ -38,14 +37,13 @@ function SaveData(){
     localStorage.setItem('lifepath', lifepath);
     localStorage.setItem('saved','true');
     localStorage.setItem('lastAction', last_func);
-    saved = true;
 }
 
 function ClearData(){
     if(confirm("Delete ALL save data? This CANNOT be undone, EVER.")){
-        window.localStorage.clear();
+        localStorage.clear();
         alert("All save data deleted. Reloading page.");
-        window.location.reload();
+        location.reload();
     }else{
         alert("Save data was NOT deleted.");
     }
