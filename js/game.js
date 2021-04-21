@@ -56,7 +56,7 @@ function Path1(){
     document.getElementById("image").setAttribute("src", "media/img/travel.jpg");
     document.getElementById("button1").setAttribute("onClick", "Wanderer_a1();");
     document.getElementById("button1").innerHTML = "Downtown";
-    document.getElementById("button2").setAttribute("onClick", "Wanderer_a2();");
+    document.getElementById("button2").setAttribute("onClick", "NeonDistrict();");
     document.getElementById("button2").innerHTML = "Neon District";
     document.getElementById("button3").setAttribute("onClick", "Wanderer_a3();");
     document.getElementById("button3").innerHTML = "Corporate District."
@@ -100,7 +100,7 @@ function Wanderer_a1(){
     document.getElementById("button1").innerHTML = "Enter the nearest shop";
     document.getElementById("button2").setAttribute("onClick", 'last_func = "Wanderer_a1"; Alleyway();');
     document.getElementById("button2").innerHTML = "Turn into the nearest alley";
-    document.getElementById("button3").setAttribute("onClick", "Wanderer_a1_c();");
+    document.getElementById("button3").setAttribute("onClick", "NeonDistrict;");
     document.getElementById("button3").innerHTML = "Head to the Neon District";
     UpdateStatus('Wanderer_a1');
 }
@@ -165,23 +165,27 @@ function Alleyway_Won(){
     document.getElementById("game-text").innerHTML = "With the guard subdued, the door is clear."
     document.getElementById("image").setAttribute("src", "media/img/alley_door.jpg");
     document.getElementById("button1").innerHTML = "Go inside";
-    document.getElementById("button1").setAttribute("onClick", "Story_End();");
+    document.getElementById("button1").setAttribute("onClick", "WIP();");
     document.getElementById("button2").innerHTML = "Interrogate the guard";
-    document.getElementById("button2").setAttribute("onClick", "Story_End();");
+    document.getElementById("button2").setAttribute("onClick", "WIP();");
     document.getElementById("button3").innerHTML = "Move along";
-    document.getElementById("button3").setAttribute("onClick", "Story_End();");
+    document.getElementById("button3").setAttribute("onClick", "WIP();");
 }
 
 function NeonDistrict(){
     if(lifepath == 'Wanderer'){
         document.getElementById("game-text") = "The Neon District is charming, but you can tell something is amiss. You observe the people as time passes."
-        document.getElementById("button1").innerHTML = "[WANDERER] Trust your gut and search the area.";
+        document.getElementById("button1").innerHTML = "[WANDERER] Trust your gut and search the area";
         document.getElementById("button1").setAttribute("onClick", "WR1();");
     }else{
         document.getElementById("game-text") = "The Neon District is charming. You observe the people as time passes."
-        document.getElementById("button1").innerHTML = "Wander the district.";
+        document.getElementById("button1").innerHTML = "Wander the district";
         document.getElementById("button1").setAttribute("onClick", "NeonDistrict_2();")
     }
+    document.getElementById("button2").innerHTML = "Enter the Neon District shop";
+    document.getElementById("button2").setAttribute("onClick", "Shop('NeonDistrict');");
+    document.getElementById("button3").innerHTML = "Head back Downtown";
+    document.getElementById("button3").setAttribute("onClick", 'WIP();');
 }
 
 /* These are the lifepath-specific, important moments. */
@@ -358,7 +362,7 @@ function ChangeTrack(track){
 
 /* Debug function. Most likely useless. */
 
-function Story_End(){
-    alert("Story implementation ends here for now, stay tuned for updates!");
+function WIP(){
+    alert("Implementation ends here for now, stay tuned for updates!");
 }
 
