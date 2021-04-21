@@ -54,11 +54,11 @@ function Path1(){
     lifepath = 'Wanderer';
     document.getElementById("game-text").innerHTML = "Welcome, Wanderer. The streets may not be friendly, but you're bound to find people who are. Where would you like to go first?";
     document.getElementById("image").setAttribute("src", "media/img/travel.jpg");
-    document.getElementById("button1").setAttribute("onClick", "Wanderer_a1();");
+    document.getElementById("button1").setAttribute("onClick", "Downtown();");
     document.getElementById("button1").innerHTML = "Downtown";
     document.getElementById("button2").setAttribute("onClick", "NeonDistrict();");
     document.getElementById("button2").innerHTML = "Neon District";
-    document.getElementById("button3").setAttribute("onClick", "Wanderer_a3();");
+    document.getElementById("button3").setAttribute("onClick", "WIP();");
     document.getElementById("button3").innerHTML = "Corporate District."
     UpdateStatus('Path1');
     ChangeTrack("theme_stage_2");
@@ -69,13 +69,13 @@ function Path1(){
 
 function Path2(){
     lifepath = 'Street Rat';
-    document.getElementById("game-text").innerHTML = "You know these streets well. Where are you off to? [WIP]";
+    document.getElementById("game-text").innerHTML = "You know these streets well. Where are you off to?";
     document.getElementById("image").setAttribute("src", "media/img/road_reflection.jpg");
     document.getElementById("button1").setAttribute("onClick", "Alleyway('Path2');");
     document.getElementById("button1").innerHTML = "Down the alleyway to your right.";
     document.getElementById("button2").setAttribute("onClick", "NeonDistrict();");
     document.getElementById("button2").innerHTML = "To the Neon District.";
-    document.getElementById("button3").setAttribute("onClick", "CorpoDistrict();");
+    document.getElementById("button3").setAttribute("onClick", "WIP();");
     document.getElementById("button3").innerHTML = "To the Corporate District.";
     UpdateStatus('Path2');
 }
@@ -84,50 +84,25 @@ function Path3(){
     lifepath = 'Corpo'
     document.getElementById("game-text").innerHTML = "The meeting is going horribly, dearest Corpo. How about getting out of here? [WIP]";
     document.getElementById("image").setAttribute("src", "media/img/meeting.jpg");
-    document.getElementById("button1").setAttribute("onClick", "Corpo_a1();");
-    document.getElementById("button1").innerHTML = "cr_a1";
-    document.getElementById("button2").setAttribute("onClick", "Corpo_a2();");
-    document.getElementById("button2").innerHTML = "cr_a2";
-    document.getElementById("button3").setAttribute("onClick", "Corpo_a3();");
-    document.getElementById("button3").innerHTML = "cr_a3";
+    document.getElementById("button1").setAttribute("onClick", "WIP();");
+    document.getElementById("button1").innerHTML = "corp_a1";
+    document.getElementById("button2").setAttribute("onClick", "WIP();");
+    document.getElementById("button2").innerHTML = "corp_a2";
+    document.getElementById("button3").setAttribute("onClick", "WIP();");
+    document.getElementById("button3").innerHTML = "corp_a3";
     UpdateStatus('Path3');
 }
 
-function Wanderer_a1(){
+function Downtown(){
     document.getElementById("game-text").innerHTML = "Welcome to Downtown Alicante.";
     document.getElementById("image").setAttribute("src", "media/img/low_view2.jpg");
-    document.getElementById("button1").setAttribute("onClick", "Shop('Wanderer_a1');");
+    document.getElementById("button1").setAttribute("onClick", "Shop('Downtown');");
     document.getElementById("button1").innerHTML = "Enter the nearest shop";
-    document.getElementById("button2").setAttribute("onClick", 'last_func = "Wanderer_a1"; Alleyway();');
+    document.getElementById("button2").setAttribute("onClick", 'last_func = "Downtown"; Alleyway();');
     document.getElementById("button2").innerHTML = "Turn into the nearest alley";
     document.getElementById("button3").setAttribute("onClick", "NeonDistrict;");
     document.getElementById("button3").innerHTML = "Head to the Neon District";
-    UpdateStatus('Wanderer_a1');
-}
-
-function Wanderer_a2(){
-    document.getElementById("game-text").innerHTML = ""
-    document.getElementById("image").setAttribute("src", "media/img/low_vdiew.jpg");
-    document.getElementById("button1").setAttribute("onClick", "Wanderer_a2_a();");
-    document.getElementById("button1").innerHTML = "a2_a";
-    document.getElementById("button2").setAttribute("onClick", "Wanderer_a2_b();");
-    document.getElementById("button2").innerHTML = "a2_b";
-    document.getElementById("button3").setAttribute("onClick", "Wanderer_a2_c();");
-    document.getElementById("button3").innerHTML = "a2_c";
-    alert("Not implemented yet, check back soon!");
-    UpdateStatus('Wanderer_a2');
-}
-function Wanderer_a3(){
-    document.getElementById("game-text").innerHTML = ""
-    document.getElementById("image").setAttribute("src", "media/img/placeholder.jpg");
-    document.getElementById("button1").setAttribute("onClick", "Wanderer_a3_a();");
-    document.getElementById("button1").innerHTML = "a3_a";
-    document.getElementById("button2").setAttribute("onClick", "Wanderer_a3_b();");
-    document.getElementById("button2").innerHTML = "a3_b";
-    document.getElementById("button3").setAttribute("onClick", "Wanderer_a3_c();");
-    document.getElementById("button3").innerHTML = "a3_c";
-    alert("Not implemented yet, check back soon!");
-    UpdateStatus('Wanderer_a3');
+    UpdateStatus('Downtown');
 }
 
 function Shop(last_func){
@@ -176,16 +151,16 @@ function NeonDistrict(){
     if(lifepath == 'Wanderer'){
         document.getElementById("game-text") = "The Neon District is charming, but you can tell something is amiss. You observe the people as time passes."
         document.getElementById("button1").innerHTML = "[WANDERER] Trust your gut and search the area";
-        document.getElementById("button1").setAttribute("onClick", "WR1();");
+        document.getElementById("button1").setAttribute("onClick", "WIP();");
     }else{
         document.getElementById("game-text") = "The Neon District is charming. You observe the people as time passes."
         document.getElementById("button1").innerHTML = "Wander the district";
-        document.getElementById("button1").setAttribute("onClick", "NeonDistrict_2();")
+        document.getElementById("button1").setAttribute("onClick", "WIP();")
     }
     document.getElementById("button2").innerHTML = "Enter the Neon District shop";
     document.getElementById("button2").setAttribute("onClick", "Shop('NeonDistrict');");
     document.getElementById("button3").innerHTML = "Head back Downtown";
-    document.getElementById("button3").setAttribute("onClick", 'WIP();');
+    document.getElementById("button3").setAttribute("onClick", "WIP();");
 }
 
 /* These are the lifepath-specific, important moments. */
@@ -241,7 +216,7 @@ function Fight(fightwon, fightescaped, health, attack, defence){
     document.getElementById("button1").innerHTML = "Attack";
     document.getElementById("button1").setAttribute("onClick", "Combat(fight_won, fight_escaped);");
     document.getElementById("button2").innerHTML = "[NOT IMPLEMENTED] Brace yourself (-50% incoming damage for one attack)";
-    document.getElementById("button2").setAttribute("onClick", "Brace();");
+    document.getElementById("button2").setAttribute("onClick", "WIP();");
     document.getElementById("button3").innerHTML = "Attempt to escape."
     document.getElementById("button3").setAttribute("onClick", "Run(" + last_func + ");");
     if(music){
@@ -363,6 +338,6 @@ function ChangeTrack(track){
 /* Debug function. Most likely useless. */
 
 function WIP(){
-    alert("Implementation ends here for now, stay tuned for updates!");
+    alert("Implementation missing for now, stay tuned for updates!");
 }
 
