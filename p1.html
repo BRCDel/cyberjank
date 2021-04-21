@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>Cyberjank 2067</title>
+		<title>Cyberjank 2069</title>
 		<link  rel="stylesheet" href="style.css" type="text/css"/>
 		<script src="js/game.js"></script>
 	</head>
-	<body onload="LoadData();" onbeforeunload="SaveData();">
+	<body onload="LoadData();">
 		<nav>
 			<a target="_self" href="index.html">Back to Home Page</a>
 		</nav>
@@ -24,7 +24,7 @@
 				<p id="status-paragraph">HP: 50/50<br/>ATK: 10<br/>DEF: 10</p>
 			</div>
 			<div class="settings-panel" id="settings-panel">
-				<button id="save-data" onClick="SaveData();">Save Data</button>
+				<button id="save-data" onClick="SaveData(); alert('Saved Data');">Save Data</button>
 				<button id="load-data" onClick="LoadData();">Load Data</button>
 				<button id="clear-data" onClick="ClearData();">Clear Data</button>
 				<button id="music" onClick="EnableMusic();">Enable Music</button>
