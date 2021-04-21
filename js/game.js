@@ -13,7 +13,7 @@ audio.volume = 0.15;
 audio.loop = true;
 
 function LoadData(){
-    if(localStorage.getItem('saved') == 'false' || localStorage.getItem('saved') == null){
+    if(localStorage.getItem('saved') != 'true'){
         alert("Generating new game data. Don't forget to save often!");
     }else{
         hp = localStorage.getItem('hp');
@@ -23,7 +23,7 @@ function LoadData(){
         lifepath = localStorage.getItem('lifepath');
         last_func = localStorage.getItem('lastAction');
         if(last_func != 'none' && last_func != null){
-            last_func();
+            window[last_func]();
         }
         alert("Data loaded.");}
 }
@@ -35,7 +35,7 @@ function SaveData(){
     localStorage.setItem('atk', atk);
     localStorage.setItem('def', def);
     localStorage.setItem('lifepath', lifepath);
-    localStorage.setItem('saved','true');
+    localStorage.setItem('saved', 'true');
     localStorage.setItem('lastAction', last_func);
 }
 
@@ -312,8 +312,6 @@ function Run(f_name){
         alert("Escape successful!");
         escaped = true;
         //If the roll succeeds, execute the passed function - Should be the one BEFORE you getting into the predicament you're running from
-        //This works but feels SO WRONG to use
-        //This line activates my fight-or-flight response.
         f_name();
     }else{
         //If the roll fails, alert the player and leave them in the same situation.
