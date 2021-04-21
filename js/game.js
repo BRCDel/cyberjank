@@ -47,10 +47,7 @@ function ClearData(){
         alert("Save data was NOT deleted.");
     }
 }
-function UpdateStatus(func){
-    document.getElementById("status-paragraph").innerHTML = ('HP: ' + hp + '/' + maxhp + '<br/>ATK: ' + atk + '<br/>DEF: ' + def);
-    last_func = func;
-}
+
 function Path1(){
     lifepath = document.getElementById("button1").innerHTML;
     document.getElementById("game-text").innerHTML = "Welcome, Wanderer. The streets may not be friendly, but you're bound to find people who are. Where would you like to go first?";
@@ -98,12 +95,13 @@ function Wanderer_a1(){
     document.getElementById("image").setAttribute("src", "media/img/low_view2.jpg");
     document.getElementById("button1").setAttribute("onClick", "Shop('Wanderer_a1');");
     document.getElementById("button1").innerHTML = "Enter the nearest shop";
-    document.getElementById("button2").setAttribute("onClick", "Wanderer_a1_b();");
+    document.getElementById("button2").setAttribute("onClick", 'Alleyway("' + "Wanderer_a1" + '");');
     document.getElementById("button2").innerHTML = "Turn into the nearest alley";
     document.getElementById("button3").setAttribute("onClick", "Wanderer_a1_c();");
     document.getElementById("button3").innerHTML = "Head to the Neon District";
     UpdateStatus('Wanderer_a1');
 }
+
 function Wanderer_a2(){
     document.getElementById("game-text").innerHTML = ""
     document.getElementById("image").setAttribute("src", "media/img/low_vdiew.jpg");
@@ -141,6 +139,53 @@ function Shop(last_func){
     UpdateStatus('Shop');
 }
 
+/* This function is considered a "shared event" between lifepaths and as such all of them will have the option to go through it. */
+/* Shared events will be moments where one or more lifepaths will have an advantage. */
+function Alleyway(funct){
+    document.getElementById("game-text").innerHTML = "As you walk into the alleyway, you come face to face with an armed man. <br/> HP: 25, ATK: 5, DEF: 5"
+    document.getElementById("image").setAttribute("src", "media/img/enemy1.jpg");
+    document.getElementById("button1").setAttribute("onClick", "Fight(25, 5, 5);");
+    document.getElementById("button1").innerHTML = "Attack him";
+    if(lifepath == 'Street Rat'){
+        document.getElementById("button2").setAttribute("onClick", "SR1();");
+        document.getElementById("button2").innerHTML = "[STREET RAT] 'I'm here to see K.'";
+    }else{
+        document.getElementById("button2").setAttribute("onClick", "Intimidate();");
+        document.getElementById("button2").innerHTML = "Intimidate him";
+    }
+    document.getElementById("button3").setAttribute("onClick", "Run(" + funct + ");");
+    document.getElementById("button3").innerHTML = "Attempt to run away.";
+    UpdateStatus('Alleyway');
+}
+
+function Fight(hp, atk, def){
+    ChangeTrack("combat_theme");
+    if(music){
+    EnableMusic();
+    }
+
+}
+
+function Run(f_name){
+    roll = Math.floor(Math.random() * 100); //Generate random number from 0 to 99
+    roll++; //Increment to make it 1 to 100
+    //50% chance of escape
+    if(roll > 50){
+        alert("Escape successful!");
+        //If the roll succeeds, execute the passed function - Should be the one BEFORE you getting into the predicament you're running from
+        //This works but feels SO WRONG to use
+        //This line activates my fight-or-flight response.
+        f_name();
+    }else{
+        //If the roll fails, alert the player and leave them in the same situation.
+        alert("Escape failed!");
+    }
+
+}
+function UpdateStatus(func){
+    document.getElementById("status-paragraph").innerHTML = ('HP: ' + hp + '/' + maxhp + '<br/>ATK: ' + atk + '<br/>DEF: ' + def);
+    last_func = func;
+}
 
 function EnableMusic(){
     music = true;
@@ -158,8 +203,14 @@ function DisableMusic(){
 }
 
 function ChangeTrack(track){
-    DisableMusic();
+    if(music){
+        DisableMusic();
+        music = true;
+    }else{
+        DisableMusic();
+    }
     audio.src=("media/aud/" + track + ".mp3");
+    audio.load();
 }
 function no_action(last_func){
     UpdateStatus(last_func);
