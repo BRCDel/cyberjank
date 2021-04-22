@@ -7,6 +7,8 @@ let last_func = 'none';
 let music = false;
 let escaped = false;
 let alley_win = false;
+let QuestA = false;
+let QuestB = false;
 
 var enemy_hp, enemy_atk, enemy_def, fight_won, fight_escaped;
 var audio = new Audio('media/aud/theme_stage1.mp3');
@@ -57,8 +59,8 @@ function ClearData(){
         alert("Save data was NOT deleted.");
     }
 }
-/* Full names such as Wanderer_a1 imply it's a general action in that lifepath. */
-/* Shortened names such as SR1 imply it's a moment unique to that lifepath which holds some form of value to it. */
+
+/* These are the game-start functions which let the user choose their lifepath. */
 function Path1(){
     lifepath = 'Wanderer';
     document.getElementById("game-text").innerHTML = "Welcome, Wanderer. The streets may not be friendly, but you're bound to find people who are. Where would you like to go first?";
@@ -182,6 +184,7 @@ function NeonDistrict(){
 }
 
 /* These are the lifepath-specific, important moments. */
+/* For example, "SR1" means "Street Rat life event 1" */
 function SR1(){
     document.getElementById("game-text").innerHTML = "The man lets you through. You duck through the door, take the elevator inside and meet K on the rooftop. It looks like something's bothering him."
     document.getElementById("image").setAttribute("src", "media/img/overlook.jpg");
@@ -218,8 +221,57 @@ function SR1_AskKWork(){
     UpdateStatus('SR1_AskKWork');
 }
 
+function SR1_AskKWork_2(){
+    document.getElementById("game-text").innerHTML = ('"' + "Different work? Yeah. There's a pretty special chip I have had my eyes on for a while. High-end Avantum tech. I want it in my hands, whether the means are legitimate or not." + '"');
+    document.getElementById("image").setAttribute("src", "media/img/overlook.jpg");
+    document.getElementById("button1").innerHTML = "Accept the offer and set out.";
+    document.getElementById("button1").setAttribute("onClick", "SR1_QuestB_Start();");
+    document.getElementById("button2").innerHTML = "Say you'd rather take the previous job.";
+    document.getElementById("button2").setAttribute("onClick", "SR1_QuestA_Start();");
+    document.getElementById("button3").innerHTML = "Kindly decline and leave.";
+    document.getElementById("button3").setAttribute("onClick", "SR1_BackOut();");
+    UpdateStatus('SR1_AskKWork');
+}
+
+function SR1_QuestA_Start(){
+    document.getElementById("game-text").innerHTML = ('"' + "Very well. You're looking for Alexander Tarvin. He's a Joytech Corp bigwig who thought he could take on the streets. I don't care if you kill him - I just want him out of the equation.");
+    document.getElementById("image").setAttribute("src", "media/img/overlook.jpg");
+    document.getElementById("button1").innerHTML = "Confirm you'll do it and set out.";
+    document.getElementById("button1").setAttribute("onClick", "SR1_QA_Trigger();");
+    document.getElementById("button2").innerHTML = "Backpedal and ask for different work.";
+    document.getElementById("button2").setAttribute("onClick", "SR1_AskKWork_2");
+    document.getElementById("button3").innerHTML = "Backpedal and leave.";
+    document.getElementById("button3").setAttribute("onClick", "SR1_BackOut();");
+    UpdateStatus('SR1_QuestA_Start');
+}
+
+function SR1_QuestB_Start(){
+    QuestB = true;
+    SR1_BackOut();
+}
+
+function SR1_QA_Trigger(){
+    QuestA = true;
+    SR1_BackOut();
+}
+
 function SR1_BackOut(){
-    alert("Not implemented yet, sorry!");
+    document.getElementById("game-text").innerHTML = ("After your meeting with K, you return outside your home. What's your next move?");
+    document.getElementById("image").setAttribute("src", "media/img/road_reflection.jpg");
+    if(QuestA == true){
+        document.getElementById("button1").innerHTML = "Look for info on Alexander Tarvin";
+        document.getElementById("button1").setAttribute("onClick", "SR_QuestA_1");
+    }else if(QuestB == true){
+        document.getElementById("button1").innerHTML = "Look for info on the Avantum chip";
+        document.getElementById("button1").setAttribute("onClick", "SR_QuestB_1");
+    }else{
+        document.getElementById("button1").innerHTML = "Head Downtown for a stroll";
+        document.getElementById("button1").setAttribute("onClick", "Downtown();");
+    }
+    document.getElementById("button2").innerHTML = "Go to the Neon District to kill time";
+    document.getElementById("button2").setAttribute("onClick", "NeonDistrict();");
+    document.getElementById("button3").innerHTML = "Call it a night";
+    document.getElementById("button3").setAttribute("onClick", "WIP();");
 }
 
 /* These are functions used for game systems. */
