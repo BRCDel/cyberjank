@@ -145,6 +145,7 @@ function Alleyway_Won(){
     document.getElementById("button2").setAttribute("onClick", "WIP();");
     document.getElementById("button3").innerHTML = "Move along";
     document.getElementById("button3").setAttribute("onClick", "WIP();");
+    UpdateStatus('Alleyway_Won')
 }
 
 function NeonDistrict(){
@@ -161,6 +162,7 @@ function NeonDistrict(){
     document.getElementById("button2").setAttribute("onClick", "Shop('NeonDistrict');");
     document.getElementById("button3").innerHTML = "Head back Downtown";
     document.getElementById("button3").setAttribute("onClick", "WIP();");
+    UpdateStatus('NeonDistrict');
 }
 
 /* These are the lifepath-specific, important moments. */
