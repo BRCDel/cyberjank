@@ -239,18 +239,18 @@ function Combat(win, escape){
         //The player gets 4% damage reduction per point of DEF. Enemies get 3% damage reduction per point of DEF.
         let dr = def * 0.04;
         hp = hp - (enemy_atk - (enemy_atk * dr));               //Enemies cannot crit.
-        Math.round(hp);                                         //Round to nearest integer.
+        hp = Math.round(hp);                                    //Round to nearest integer.
         dr = enemy_def * 0.03;
         enemy_hp = enemy_hp - (2 * (atk - (atk * dr)));          //Double damage for critical hits
-        Math.round(enemy_hp);                                   //Round to nearest integer.
+        enemy_hp = Math.round(enemy_hp);                         //Round to nearest integer.
         document.getElementById("status-paragraph").innerHTML = ('HP: ' + hp + '/' + maxhp + '<br/>ATK: ' + atk + '<br/>DEF: ' + def);
     }else{
         let dr = def * 0.04;
         hp = hp - (enemy_atk - (enemy_atk * dr));
-        Math.round(hp);                                         //Round to nearest integer
+        hp = Math.round(hp);                                     //Round to nearest integer
         dr = enemy_def * 0.03;
         enemy_hp = enemy_hp - (atk - (atk * dr));                //Same thing but without the double damage.
-        Math.round(enemy_hp);                                   //Round to nearest integer
+        enemy_hp = Math.round(enemy_hp);                         //Round to nearest integer
         document.getElementById("status-paragraph").innerHTML = ('HP: ' + hp + '/' + maxhp + '<br/>ATK: ' + atk + '<br/>DEF: ' + def);
     }
     document.getElementById("game-text").innerHTML = ("Enemy status<br/>HP:" + enemy_hp + " ATK:" + enemy_atk + " DEF:" + enemy_def);
@@ -264,17 +264,17 @@ function Combat(win, escape){
 }
 
 function Intimidate(plr_atk, enm_def, win, trigger){
-    // Roll for Intimidation (haha) with a 30% success chance, growing in accordance to the player's Attack against the opponent's Defence.
+    // Roll for Intimidation (haha) with a 25% success chance, growing in accordance to the player's Attack against the opponent's Defence.
     let roll = (Math.floor(Math.random() * 100));
     roll++;
     let disparity = plr_atk - enm_def;
     //If the difference in Attack vs Defence is two digits or bigger, double its effect. Being all scary and stuff.
-    if(disparity < 10){
+    if(disparity < 10 || disparity > -10){
         roll = roll + ((disparity) * 0.8);
     }else{
         roll = roll + ((disparity) * 1.6);
     }
-    if(roll >= 70){
+    if(roll >= 75){
         alert("Intimidation successful.");
         win();
     }else{
