@@ -12,12 +12,15 @@ var audio = new Audio('media/aud/theme_stage1.mp3');
 audio.volume = 0.15;
 audio.loop = true;
 
-function LoadData(){
+function LoadData(option){
     if(localStorage.getItem('saved') != 'true'){
         alert("Generating new game data. Don't forget to save often!");
     }else{
-        hp = localStorage.getItem('hp');
+        //Restore player HP upon loading data.
+        //This "fixes" the bug of it not being restored if you reload during combat.
+        //Additionally, this can be considered a form of "resting".
         maxhp = localStorage.getItem('maxhp');
+        hp = localStorage.getItem('maxhp');
         atk = localStorage.getItem('atk');
         def = localStorage.getItem('def');
         lifepath = localStorage.getItem('lifepath');
@@ -25,7 +28,11 @@ function LoadData(){
         if(last_func != 'none' && last_func != null){
             window[last_func]();
         }
-        alert("Data loaded.");}
+    }
+    if(option = 'alert' && option != null){
+        alert("Data loaded.");
+    }
+
 }
 
 function SaveData(){
@@ -260,7 +267,9 @@ function Combat(win, escape){
         Fight(win, escape, enemy_hp, enemy_atk, enemy_def);
     }else if(hp <= 0){
         alert("You have died! Loading last save.");
-        LoadData();
+        //Restore player health upon them dying.
+        localStorage.setItem('hp', maxhp);
+        LoadData('no_alert');
         location.reload();
     }
 }
@@ -342,4 +351,3 @@ function ChangeTrack(track){
 function WIP(){
     alert("Implementation missing for now, stay tuned for updates!");
 }
-
