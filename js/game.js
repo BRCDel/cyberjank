@@ -72,7 +72,7 @@ function Path1(){
     document.getElementById("button3").setAttribute("onClick", "WIP();");
     document.getElementById("button3").innerHTML = "Corporate District."
     UpdateStatus('Path1');
-    ChangeTrack("theme_stage_2");
+    ChangeTrack('theme_stage_2');
     if(music){
         EnableMusic();
     }
@@ -162,6 +162,7 @@ function Alleyway_Won(){
     document.getElementById("button3").innerHTML = "Head back Downtown";
     document.getElementById("button3").setAttribute("onClick", "Downtown();");
     alley_win = true;
+    ChangeTrack('theme_stage_1');
     localStorage.setItem('alleyWin', true);
     UpdateStatus('Alleyway_Won')
 }
