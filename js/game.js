@@ -205,7 +205,7 @@ function SR1_GreetK(){
     document.getElementById("button1").innerHTML = "Offer to take care of it for him.";
     document.getElementById("button1").setAttribute("onClick", "SR1_QuestA_Start();");
     document.getElementById("button2").innerHTML = "Offer condolences and try to cheer him up.";
-    document.getElementById("button2").setAttribute("onClick", "SR1_ComfortK();");
+    document.getElementById("button2").setAttribute("onClick", "WIP();");
     document.getElementById("button3").innerHTML = "Leave him to his devices."
     document.getElementById("button3").setAttribute("onClick", "SR1_BackOut();");
     UpdateStatus('SR1_GreetK');
@@ -236,7 +236,7 @@ function SR1_AskKWork_2(){
 }
 
 function SR1_QuestA_Start(){
-    document.getElementById("game-text").innerHTML = ('"' + "Very well. You're looking for Alexander Tarvin. He's a Joytech Corp bigwig who thought he could take on the streets. I don't care if you kill him - I just want him out of the equation.");
+    document.getElementById("game-text").innerHTML = ('"' + "Very well. You're looking for Alexander Tarvin. He's a Joytech Corp bigwig who thought he could take on the streets. I don't care if you kill him - I just want him out of the equation." + '"');
     document.getElementById("image").setAttribute("src", "media/img/overlook.jpg");
     document.getElementById("button1").innerHTML = "Confirm you'll do it and set out.";
     document.getElementById("button1").setAttribute("onClick", "SR1_QA_Trigger();");
@@ -262,10 +262,10 @@ function SR1_BackOut(){
     document.getElementById("image").setAttribute("src", "media/img/road_reflection.jpg");
     if(QuestA == true){
         document.getElementById("button1").innerHTML = "Look for info on Alexander Tarvin";
-        document.getElementById("button1").setAttribute("onClick", "SR_QuestA_1");
+        document.getElementById("button1").setAttribute("onClick", "WIP();");
     }else if(QuestB == true){
         document.getElementById("button1").innerHTML = "Look for info on the Avantum chip";
-        document.getElementById("button1").setAttribute("onClick", "SR_QuestB_1");
+        document.getElementById("button1").setAttribute("onClick", "WIP();");
     }else{
         document.getElementById("button1").innerHTML = "Head Downtown for a stroll";
         document.getElementById("button1").setAttribute("onClick", "Downtown();");
