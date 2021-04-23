@@ -1,15 +1,42 @@
 /* Base styling for most HTML components */
-nav {background-color:#000; color:gainsboro}
-body {background-color:#000; color:gainsboro}
-h1 {color:gainsboro}
+nav {background-color:#000; width:7%; color:gainsboro}
+h1 {text-align:center; color:gainsboro}
 h2 {color:gainsboro}
-p {background-color:#000; color:gainsboro}
+p {color:gainsboro}
 aside {background-color:#000; color:gainsboro}
 footer {position:fixed; bottom:10px; left:0}
+/* |body| gets a nice, separate style block. */
+body {
+    height:100%;
+    background-color:#000;
+    background-image:url("media/img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:gainsboro
+}
 /* Image fitment fix found in StackOverflow */
 img{
     max-width: 100%;
     max-height: 100%;
+}
+/* Background image */
+{
+    background-image: url("media/img/background.jpg");
+    height: 100%;
+
+}
+/* Home page - Make the buttons look cool.*/
+.home-buttons button{
+    background-color: #000;
+    border: 1px solid white;
+    color: gainsboro;
+    cursor: pointer;
+    width: 35%;
+    height: 55px;
+    display: block;  /* Make those buttons appear below each other */
+    margin: auto;    /* I heard about this on StackOverflow. It is beautiful. */
+    position:relative;
+    top:75%;
 }
 /* Literally just a basic container */
 .game-window{
@@ -18,11 +45,18 @@ img{
     border:1px solid white;
     margin:auto;
 }
+/* Specific styling for paragraphs in the game window */
 .game-window p{
-width:35%;
-position:relative;
-margin:auto;
-text-align:center;
+    width: 35%;
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+/* Add a basic border around the whole button stack and align it with the rest of the page. */
+.button-stack {
+    width: 45%;
+    border: 1px solid white;
+    margin:auto;        /* This is still beautiful. */
 }
 /* The template for this block came from good ol' W3Schools: https://www.w3schools.com/js/DEFAULT.asp */
 .button-stack button {
@@ -30,33 +64,34 @@ text-align:center;
     border: none;
     color: gainsboro;
     cursor: pointer;
-    width: 45%;
+    width: 100%;
     height: 45px;
-    display: block; /* Make the buttons appear below each other */
-    margin: auto; /* I heard about this on StackOverflow. It is beautiful. */
+    display: block;     /* Make those buttons appear below each other too */
     position: relative;
     top: 75%;
 }
 /* Another basic container */
 .status-window{
     background-color:#000;
-    width:45%;
-    border:1px solid white;
-    margin:auto;
+    width: 45%;
+    border: 1px solid white;
+    margin: auto;       /* This remains beauiful. */
 }
+/* Specific styling for the text inside the status window (Which is its only content, but still) */
 .status-window p{
-width:35%;
-position:relative;
-margin:auto;
-text-align:center;
+width: 35%;
+position: relative;
+margin: auto;           /* Should I stop joking about how beautiful this is yet? */
+text-align: center;
 }
 /* Bottom settings panel */
 .settings-panel{
-    background-color:#000;
-    width:45%;
-    border:1px solid white;
-    margin:auto;
+    background-color: #000;
+    width: 45%;
+    border: 1px solid white;
+    margin: auto;       /* No, I don't think I will. */
 }
+/* Specific styling for bottom panel buttons */
 .settings-panel button{
     background-color: #000;
     border: none;
@@ -64,5 +99,5 @@ text-align:center;
     cursor: pointer;
     height: 45px;
     width: 24.6%;
-    margin: auto;
+    margin: auto;       /* margin:auto is truly a blessing. */
 }
