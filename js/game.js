@@ -241,7 +241,7 @@ function SR1_QuestA_Start(){
     document.getElementById("button1").innerHTML = "Confirm you'll do it and set out.";
     document.getElementById("button1").setAttribute("onClick", "SR1_QA_Trigger();");
     document.getElementById("button2").innerHTML = "Backpedal and ask for different work.";
-    document.getElementById("button2").setAttribute("onClick", "SR1_AskKWork_2");
+    document.getElementById("button2").setAttribute("onClick", "SR1_AskKWork_2();");
     document.getElementById("button3").innerHTML = "Backpedal and leave.";
     document.getElementById("button3").setAttribute("onClick", "SR1_BackOut();");
     UpdateStatus('SR1_QuestA_Start');
