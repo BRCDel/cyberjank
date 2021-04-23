@@ -131,6 +131,7 @@ function Shop(last_func){
 /* These function are considered "shared events" between lifepaths and as such will be available to all lifepaths. */
 /* Shared events will be moments where one or more lifepaths will have an advantage. */
 function Alleyway(){
+    //If the player has already defeated the guard here, just skip this entirely and go to the correct function.
     if(alley_win){
         Alleyway_Won();
     }else{
@@ -172,9 +173,9 @@ function NeonDistrict(){
         document.getElementById("button1").innerHTML = "[WANDERER] Trust your gut and search the area";
         document.getElementById("button1").setAttribute("onClick", "WIP();");
     }else{
-        document.getElementById("game-text") = "The Neon District is charming. You observe the people as time passes."
+        document.getElementById("game-text").innerHTML = "The Neon District is charming. You observe the people as time passes.";
         document.getElementById("button1").innerHTML = "Wander the district";
-        document.getElementById("button1").setAttribute("onClick", "WIP();")
+        document.getElementById("button1").setAttribute("onClick", "WIP();");
     }
     document.getElementById("button2").innerHTML = "Enter the Neon District shop";
     document.getElementById("button2").setAttribute("onClick", "Shop('NeonDistrict');");
@@ -285,7 +286,7 @@ function Fight(fightwon, fightescaped, health, attack, defence){
     document.getElementById("game-text").innerHTML = ("Enemy status<br/>HP:" + health + " ATK:" + attack + " DEF:" + defence);
     document.getElementById("button1").innerHTML = "Attack";
     document.getElementById("button1").setAttribute("onClick", "Combat(fight_won, fight_escaped);");
-    document.getElementById("button2").innerHTML = "[NOT IMPLEMENTED] Brace yourself (-50% incoming damage for one attack)";
+    document.getElementById("button2").innerHTML = "Guard Up(50% damage reduction but 50% chance for your attack to fail)";
     document.getElementById("button2").setAttribute("onClick", "WIP();");
     document.getElementById("button3").innerHTML = "Attempt to escape."
     document.getElementById("button3").setAttribute("onClick", "Run(" + last_func + ");");
