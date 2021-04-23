@@ -111,7 +111,7 @@ function Downtown(){
     document.getElementById("button1").innerHTML = "Enter the Downtown shop";
     document.getElementById("button2").setAttribute("onClick", 'last_func = "Downtown"; Alleyway();');
     document.getElementById("button2").innerHTML = "Turn into the nearest alley";
-    document.getElementById("button3").setAttribute("onClick", "NeonDistrict;");
+    document.getElementById("button3").setAttribute("onClick", "NeonDistrict();");
     document.getElementById("button3").innerHTML = "Head to the Neon District";
     UpdateStatus('Downtown');
 }
