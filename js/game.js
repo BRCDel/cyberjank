@@ -156,7 +156,11 @@ function Alleyway_Won(){
     document.getElementById("game-text").innerHTML = "With the guard subdued, the door is clear."
     document.getElementById("image").setAttribute("src", "media/img/alley_door.jpg");
     document.getElementById("button1").innerHTML = "Go inside";
-    document.getElementById("button1").setAttribute("onClick", "WIP();");
+    if (lifepath = "Street Rat"){
+        document.getElementById("button1").setAttribute("onClick", "SR1()");
+    }else{
+        document.getElementById("button1").setAttribute("onClick", "WIP();");
+    }
     document.getElementById("button2").innerHTML = "Interrogate the guard";
     document.getElementById("button2").setAttribute("onClick", "WIP();");
     document.getElementById("button3").innerHTML = "Head back Downtown";
@@ -188,7 +192,7 @@ function NeonDistrict(){
 /* These are the lifepath-specific, important moments. */
 /* For example, "SR1" means "Street Rat life event 1" */
 function SR1(){
-    document.getElementById("game-text").innerHTML = "The man lets you through. You duck through the door, take the elevator inside and meet K on the rooftop. It looks like something's bothering him."
+    document.getElementById("game-text").innerHTML = (" You duck through the door, take the elevator inside and meet K on the rooftop. It looks like something's bothering him.");
     document.getElementById("image").setAttribute("src", "media/img/overlook.jpg");
     document.getElementById("button1").innerHTML = "Ask him what's on his mind.";
     document.getElementById("button1").setAttribute("onClick", "SR1_GreetK();");
@@ -258,7 +262,7 @@ function SR1_QA_Trigger(){
 }
 
 function SR1_BackOut(){
-    document.getElementById("game-text").innerHTML = ("After your meeting with K, you return outside your home. What's your next move?");
+    document.getElementById("game-text").innerHTML = ("After seeing K, you return outside your home. What's your next move?");
     document.getElementById("image").setAttribute("src", "media/img/road_reflection.jpg");
     if(QuestA == true){
         document.getElementById("button1").innerHTML = "Look for info on Alexander Tarvin";
