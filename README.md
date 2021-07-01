@@ -27,4 +27,6 @@ Roberts Space Industries for the Cityscape image.
 
 Agnis Leznins, Alexander Popov, Atul Vinayak, Cheng Feng, Christopher Farrugia, Judeus Samson, Pat Krupa, Sean Foley and Sunyu Kim on Unsplash for all other images.
 
+InAudio for in-game music.
+
 All entities credited are directly linked to in the game's info page.
