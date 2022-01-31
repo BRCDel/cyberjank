@@ -18,12 +18,7 @@ body {
 img{
     max-width: 100%;
     max-height: 100%;
-}
-/* Background image */
-{
-    background-image: url("media/img/background.jpg");
-    height: 100%;
-
+    width: 100%;
 }
 /* Home page - Make the buttons look cool.*/
 .home-buttons button{
@@ -70,18 +65,26 @@ img{
     position: relative;
     top: 75%;
 }
+/* Recolour the selected button outline to white */
+.button-stack button:focus {
+    outline: 0;
+}
+/* Make the hovered button highlight */
+.button-stack button:hover{
+    background-color: #0f0f0f;
+}
 /* Another basic container */
 .status-window{
     background-color:#000;
     width: 45%;
     border: 1px solid white;
-    margin: auto;       /* This remains beauiful. */
+    margin: auto;       /* This remains beautiful. */
 }
 /* Specific styling for the text inside the status window (Which is its only content, but still) */
 .status-window p{
 width: 35%;
 position: relative;
-margin: auto;           /* Should I stop joking about how beautiful this is yet? */
+margin: auto;           /* Should I stop preaching about how beautiful this is yet? */
 text-align: center;
 }
 /* Bottom settings panel */

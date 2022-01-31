@@ -204,7 +204,7 @@ function SR1(){
 }
 
 function SR1_GreetK(){
-    document.getElementById("game-text").innerHTML = '"' + "Yeah, I have an issue. One of my boys wound up shot in the head. I know who did it, but I have to stay low for now." + '"'  ;
+    document.getElementById("game-text").innerHTML = '"' + "To be honest, I have an problem. One of my boys wound up shot in the head. I know who did it, but I have to stay low for now." + '"'  ;
     document.getElementById("image").setAttribute("src", "media/img/overlook.jpg");
     document.getElementById("button1").innerHTML = "Offer to take care of it for him.";
     document.getElementById("button1").setAttribute("onClick", "SR1_QuestA_Start();");
@@ -372,7 +372,7 @@ function Run(f_name){
         f_name();
     }else{
         //If the roll fails, alert the player and leave them in the same situation.
-        Combat();
+        Combat(null, null);
         alert("Escape failed!");
     }
 }
