@@ -1,5 +1,5 @@
 /* Base styling for most HTML components */
-nav {background-color:#000; width:7%; color:gainsboro}
+nav {width:7%; color:gainsboro}
 h1 {text-align:center; color:gainsboro}
 h2 {color:gainsboro}
 p {color:gainsboro}
@@ -100,4 +100,7 @@ text-align: center;
     height: 45px;
     width: 24.6%;
     margin: auto;       /* margin:auto is truly a blessing. */
+}
+.back-home nav{
+    background-color: none;
 }
